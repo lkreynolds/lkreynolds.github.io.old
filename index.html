@@ -28,11 +28,13 @@
     	<li> Variables of the string type are smart - there are methods that can be used with strings.</li>
     	<li> How to insert a line break within a string: \n 
     </ul>
-    <h3>Arithmetic</h3>
+    <h3>Operators</h3>
     <ul>
     	<li>Multiplication: *, division: /, addition: +, subtraction: -</li>
     	<li>Operator Precedence: P E M D A S </li>
     	<li>Shorthand operators: +=, -=, *=, /=, ++ (increment, --</li>
+    	<li>The addition operator becomes the concatenation operator when one tries to add two strings. If one tries to add a string number and a number, concatenation will take precedence</li>
+    	<li> !: NOT operator, negates 
     </ul>
     <h3>Conditionals</h3>
     <ul>
@@ -43,10 +45,16 @@
     	<li> || : OR </li>
     	<li> Alternative to if statement: 
     		<p>switch (variable)<br/> 
-    		{ case "x": do x; break; <br/>
-    		  case "y": do y; break;<br/>
-    		  default: do z;}</p>
-    		  <br/> The break statement prevents "fallthrough," it "breaks" out of the switch statement.</li>
+    		  { <br/>
+    		  case "x": do x; <br/>
+    		    break; <br/>
+    		  case "y": do y;<br/>
+    		    break;<br/>
+    		  default: do z;<br/>
+    		  }
+    		  </p>
+    		  </li>
+    		  <li>The break statement prevents "fallthrough," it "breaks" out of the switch statement.</li>
     		 </ul>
     <h3>Functions</h3>
     <ul>
@@ -55,6 +63,66 @@
     	<li>Best Practice: Define functions before you call them. (JavaScript does an initial "scan" for functions in the whole file, so it doesn't really matter where you define functions, though.)</li>
     	<li>Other word for function: module, subroutine, method </li>
     	<li>Simple definition for recursion: when a function calls itself at least once</li>
+    	<li>Scope: Where an object is visible</li>
+    	<li>Local variables have local scope.</li>
+    	<li>Global variables have global scope.</li>
+    	<li>Variables declared within a function have scope within that function; the same for loops is not true (at least with javascript)</li>
+    	<li>If you put a group of functions into different files, make sure the references to those files are listed in order of dependence.</li>
     </ul>
+
+    <h3>Iterators</h3>
+    <ul>
+    	<li>Simple loop: <br/>
+    	while(condition){ <br/>
+    		do x; <br/>
+    	} <br/>
+    	</li>
+    	<li>Be sure to include an index, and manupilate it to avoid an infinite loop.</li>
+    	<li>Another simple loop: <br/>
+    	for(i=0; i < 10; i++){ <br/>
+    		do x; <br/>
+    	} <br/>
+    	</li>
+
+    	<li>Another simple loop: <br/>
+    	do{    <br/>
+    		x; <br/>
+    	} while(condition); <br/>
+    	</li>
+    </ul>
+    <h3>A few built in functions</h3>
+    <ul>
+    	<li>isNaN() : returns TRUE if the variable is not a number, false otherwise</li>
+    	<li> Number() : converts the argument to a number</li>
+    	<li>Built in string methods
+    		<ul>
+    			<li> string.toUpperCase() </li>
+    			<li> string.toLowerCase() </li>
+    			<li> string.indexOf("search"): if the "search" string exists within the string, return the index of where it begins; returns -1 if not</li>
+    			<li> string.lastIndexof("search"):returns the last index location of the search string if it exists, -1 if not</li>
+    			<li> string.slice(iBegin, iEnd): returns every character between iBegin and iEnd </li>
+    			<li> string.substring() </li>
+    			<li> string.substr()</li>
+    			<li> Note: When comparing two strings, uppercase letters are regarded is less than lowercase letters </li>
+    		</ul>
+    	</li>  
+    </ul>
+    <h3>Regular expressions</h3>
+    	<ul>
+    		<li> create regular expressions: var regExp = /hello/;</li>
+    		<li> or, this way: var my regExp = new RegExp("hello");</li>
+    		<li> built in method: regExp.test(string): tests if the string contains the regular expression help in the regExp variable, returns a boolean</li>
+    		<li> /^hello/ : carrot means at the start </li>
+    		<li> /hello$/ : dollar sign means at the end </li>
+    		<li> /hel+o/ : plus sign means l appears once or more </li>
+    		<li> /hel*o/ : asterisk means l appearss zero or more </li>
+    		<li> /hel?o/ : question mark means l appears zero or once </li>
+    		<li> /hello|goodbye : pipe means either hello or goodbye appears </li>
+    		<li> /he..o/ : decimal means any character </li>
+    		<li> /\wello/: backslash and w means alphanumeric or underscore </li>
+    		<li> /\bello/: backslash and b means word boundary: space or new line </li>
+    		<li> /[clndr]ope/ :brackets indicate a range </li>
+    		<li> Regular expressions are used to check for formatting: if the input matches the format of an e-mail address, phone number, cc number, etc </li>
+    	</ul>
 </body>
 </html>
